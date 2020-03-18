@@ -23,10 +23,10 @@ class Landing extends Component {
                                 flexDirection: "column",
                                 margin: "auto"
                             }}>
-                                <Button style={{
+                                <Button href="/register" style={{
                                     margin: "30px"
                                 }}>REGISTER</Button>
-                                <Button style={{
+                                <Button href="/login" style={{
                                     margin: "30px"
                                 }}>LOG IN</Button>
                             </div>

@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { BrowserRouter as Router, Switch, Route, NavLink as RRNavLink } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch, Route,
+    NavLink as RRNavLink,
+    Link
+} from 'react-router-dom';
 import { NavLink } from "reactstrap";
 import About from "./About"
 import Landing from "./Landing";
 import Home from './Home';
+import Register from './Register';
+import Login from './Login'
 
 
 class TopNavBar extends Component {
@@ -21,7 +28,7 @@ class TopNavBar extends Component {
                             <img alt="logo" src={require('../images/logo.png')} style={{
                                 width: "30px",
                                 height: "30px",
-                                className: "d-inline-block align-top"
+                                className: "d-inlines-block align-top"
                             }} />{'  '}
                         </Navbar.Brand>
                         <Nav >
@@ -29,7 +36,7 @@ class TopNavBar extends Component {
                                 <NavLink tag={RRNavLink} exact to="/">PROTOTYPE.ONE</NavLink>
                             </NavItem>
                             <NavItem >
-                                <NavLink tag={RRNavLink} exact to="/About">ABOUT</NavLink>
+                                <NavLink tag={RRNavLink} exact to="/about">ABOUT</NavLink>
                             </NavItem>
                         </Nav>
 
@@ -38,11 +45,18 @@ class TopNavBar extends Component {
                         <Route path="/home">
                             <Home />
                         </Route>
-                        <Route path="/">
-                            <Landing />
-                        </Route>
+
                         <Route path="/about">
                             <About />
+                        </Route>
+                        <Route path="/register">
+                            <Register />
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/">
+                            <Landing />
                         </Route>
                     </Switch>
                 </Router>
