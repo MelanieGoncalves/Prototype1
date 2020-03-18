@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 class Landing extends Component {
     constructor(props) {
@@ -12,10 +12,25 @@ class Landing extends Component {
                 <Card style={{
                     width: "85%",
                     margin: "50px auto",
-                    backgroundColor: "gray"
+                    backgroundColor: "#363537"
+
                 }}>
-                    <Card.Title>Test</Card.Title>
                     <Card.Body>
+                        <div style={{ display: "flex" }}>
+                            <img alt="graph" src={require('../images/piegraph.jpg')} />
+                            <div style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                margin: "auto"
+                            }}>
+                                <Button style={{
+                                    margin: "30px"
+                                }}>REGISTER</Button>
+                                <Button style={{
+                                    margin: "30px"
+                                }}>LOG IN</Button>
+                            </div>
+                        </div>
 
                     </Card.Body>
                 </Card>
