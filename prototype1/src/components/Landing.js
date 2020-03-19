@@ -10,7 +10,7 @@ class Landing extends Component {
         return (
             <div >
                 <Card style={{
-                    width: "85%",
+                    width: "65%",
                     margin: "50px auto",
                     backgroundColor: "#363537"
 

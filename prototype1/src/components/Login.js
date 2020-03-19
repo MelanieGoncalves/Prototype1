@@ -33,7 +33,7 @@ class Login extends Component {
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" href="/home">
                                 Submit
   </Button>
 
