@@ -6,6 +6,15 @@ class Login extends Component {
         super(props);
     }
 
+    login() {
+        let user = {
+            firstname: "firstname",
+            lastname: "lastname",
+            email: "email"
+        }
+        localStorage.setItem('user', JSON.stringify(user));
+        window.location = "/home";
+    }
     render() {
         return (
             <div>
@@ -33,8 +42,8 @@ class Login extends Component {
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit" href="/home">
-                                Submit
+                            <Button variant="primary" type="submit" onClick={this.login} href="/home">
+                                LOG IN
   </Button>
 
                         </Form>
