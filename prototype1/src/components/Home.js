@@ -21,15 +21,12 @@ class Home extends Component {
     }
 
     async componentDidMount() {
-        await console.log(this.state.accounts);
         let u = await JSON.parse(localStorage.getItem("user"));
         let a = await JSON.parse(localStorage.getItem("accounts"));
-        await console.log(this.state.accounts);
         let b = await this.showButtons(a);
         await this.setState({
             user: u,
-            accounts: a,
-
+            accounts: a
         });
         await this.setState({ buttons: b });
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 
 class AddAccounts extends Component {
     constructor(props) {
@@ -8,7 +8,6 @@ class AddAccounts extends Component {
 
     addFB() {
         let currentaccounts = JSON.parse(localStorage.getItem('accounts'));
-        console.log(currentaccounts.twitter);
         let accounts = {
             facebook: true,
             twitter: currentaccounts.twitter,
@@ -16,6 +15,8 @@ class AddAccounts extends Component {
             instagram: currentaccounts.instagram
         }
         localStorage.setItem('accounts', JSON.stringify(accounts));
+        document.getElementById('fblabel').style.color = "black";
+        document.getElementById('fblabel').style.backgroundColor = "yellow";
     }
 
     addTW() {
@@ -27,6 +28,8 @@ class AddAccounts extends Component {
             instagram: currentaccounts.instagram
         }
         localStorage.setItem('accounts', JSON.stringify(accounts));
+        document.getElementById('twlabel').style.color = "black";
+        document.getElementById('twlabel').style.backgroundColor = "yellow";
     }
 
     addLI() {
@@ -38,6 +41,8 @@ class AddAccounts extends Component {
             instagram: currentaccounts.instagram
         }
         localStorage.setItem('accounts', JSON.stringify(accounts));
+        document.getElementById('lilabel').style.color = "black";
+        document.getElementById('lilabel').style.backgroundColor = "yellow";
     }
 
     addIG() {
@@ -49,6 +54,8 @@ class AddAccounts extends Component {
             instagram: true
         }
         localStorage.setItem('accounts', JSON.stringify(accounts));
+        document.getElementById('iglabel').style.color = "black";
+        document.getElementById('iglabel').style.backgroundColor = "yellow";
     }
 
     render() {
@@ -67,18 +74,30 @@ class AddAccounts extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <h4>Centered Modal</h4>
-                        <ButtonToolbar>
-                            <Button onClick={this.addFB} ><img src={require('../images/fblogo.jpg')} alt=" " style={{ height: "150px" }} /></Button>
-                            <Button onClick={this.addTW} ><img src={require('../images/twitter.jpg')} style={{ height: "150px" }} /></Button>
-                            <Button onClick={this.addLI} ><img src={require('../images/linkedin.jpg')} style={{ height: "150px" }} /></Button>
-                            <Button onClick={this.addIG} ><img src={require('../images/insta.jpeg')} alt=" " style={{ height: "150px" }} /></Button>
-                        </ButtonToolbar>
+                        <Form style={{ display: "flex" }}>
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                <Button style={{ backgroundColor: "transparent", border: "none" }} onClick={this.addFB} ><img src={require('../images/fblogo.jpg')} alt=" " style={{ height: "150px" }} /></Button>
+                                <Form.Label style={{ color: "white" }} id="fblabel" >Facebook Added</Form.Label>
+                            </div>
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                <Button style={{ backgroundColor: "transparent", border: "none" }} onClick={this.addTW} ><img src={require('../images/twitter.jpg')} style={{ height: "150px" }} /></Button>
+                                <Form.Label style={{ color: "white" }} id="twlabel" >Twitter Added</Form.Label>
+                            </div>
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                <Button style={{ backgroundColor: "transparent", border: "none" }} onClick={this.addLI} ><img src={require('../images/linkedin.jpg')} style={{ height: "150px" }} /></Button>
+                                <Form.Label style={{ color: "white" }} id="lilabel" >LinkedIn Added</Form.Label>
+                            </div>
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                <Button style={{ backgroundColor: "transparent", border: "none" }} onClick={this.addIG} ><img src={require('../images/insta.jpeg')} alt=" " style={{ height: "150px" }} /></Button>
+                                <Form.Label style={{ color: "white" }} id="iglabel" >Instagram Added</Form.Label>
+                            </div>
+                        </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.props.onHide}>DONE</Button>
+                        <Button onClick={() => { window.location = "/home" }}>DONE</Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+            </div >
         )
     }
 }
