@@ -12,7 +12,14 @@ class Login extends Component {
             lastname: "lastname",
             email: "email"
         }
+        let accounts = {
+            facebook: false,
+            twitter: false,
+            linkedin: false,
+            instagram: false
+        }
         localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('accounts', JSON.stringify(accounts));
         window.location = "/home";
     }
     render() {
